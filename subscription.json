@@ -1,7 +1,7 @@
 {
   "id": 2026102704,
-  "name": "五应用广告优化",
-  "version": 2,
+  "name": "六应用广告优化",
+  "version": 3,
   "author": "cdryzun; derived from aoguai subscription v89",
   "globalGroups": [],
   "apps": [
@@ -727,6 +727,99 @@
             }
           ],
           "actionCd": 10000
+        },
+        {
+          "key": 2,
+          "name": "全屏广告-会员广告",
+          "desc": "关闭首页和视频页的会员广告提示",
+          "enable": true,
+          "fastQuery": true,
+          "activityIds": "com.google.android.apps.youtube.app.watchwhile.MainActivity",
+          "rules": [
+            {
+              "key": 0,
+              "name": "视频",
+              "matches": "[!(getChild(0).getChild(0).desc=\"Image attachment\")] + @[desc=\"不用了，谢谢\" || desc=\"关闭\" || desc=\"我暂时不要\" || desc=\"Close\" || desc=\"No thanks\" || desc=\"I’ll pass this time\"][clickable=true] <3 ViewGroup <<(-n+8) [vid=\"bottom_ui_container\" || vid=\"custom\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/13797512",
+                "https://i.gkd.li/i/19578085",
+                "https://i.gkd.li/i/25865404",
+                "https://i.gkd.li/i/28486200"
+              ],
+              "exampleUrls": "https://e.gkd.li/1292c8c9-26e3-4053-bec4-e5ebe50cde8e"
+            },
+            {
+              "key": 1,
+              "name": "开屏",
+              "matches": "[!(getChild(0).getChild(0).desc=\"Image attachment\")] + @[desc=\"不用了，谢谢\" || desc=\"关闭\" || desc=\"我暂时不要\" || desc=\"Close\" || desc=\"No thanks\"][visibleToUser=true] -n ImageView < * < [vid=\"custom\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/18017075",
+                "https://i.gkd.li/i/18549944"
+              ],
+              "exampleUrls": "https://e.gkd.li/11cdf5b2-97a8-42f0-a2eb-dc1cb2c98ac1"
+            }
+          ]
+        },
+        {
+          "key": 5,
+          "name": "分段广告-播放页广告",
+          "desc": "点击[Dismiss/关闭]",
+          "enable": true,
+          "rules": [
+            {
+              "fastQuery": true,
+              "activityIds": "com.google.android.apps.youtube.app.watchwhile.MainActivity",
+              "matches": "[vid=\"mealbar_action_button\"] - [vid=\"mealbar_dismiss_button\"][clickable=true][visibleToUser=true]",
+              "exampleUrls": "https://e.gkd.li/aa8f2617-fd6d-43a8-951d-1bd6efc504d3",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/19930694",
+                "https://i.gkd.li/i/25461814"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "com.eg.android.AlipayGphone",
+      "name": "支付宝",
+      "groups": [
+        {
+          "key": 3,
+          "name": "更新提示",
+          "desc": "关闭应用更新提示弹窗",
+          "enable": true,
+          "fastQuery": true,
+          "matchTime": 10000,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "rules": [
+            {
+              "key": 0,
+              "matches": "[text=\"立即更新\" || text=\"马上体验\"] <n * > [text*=\"稍后\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/13327095",
+                "https://i.gkd.li/i/15010554"
+              ]
+            },
+            {
+              "key": 1,
+              "matches": [
+                "[text=\"版本更新\" || text^=\"Version\"]",
+                "[id=\"com.alipay.mobile.antui:id/btn_close\" || id=\"com.alipay.mobile.accountauthbiz:id/close_dialog_button\"]"
+              ],
+              "snapshotUrls": [
+                "https://i.gkd.li/i/13490805",
+                "https://i.gkd.li/i/13580594",
+                "https://i.gkd.li/i/23236828"
+              ]
+            },
+            {
+              "key": 2,
+              "matches": "[text=\"立即升级最新版支付宝客户端\"] < LinearLayout + [id=\"com.alipay.mobile.advertisement:id/announcementview_righticon\"]",
+              "snapshotUrls": "https://i.gkd.li/i/13490797"
+            }
+          ]
         }
       ]
     }
