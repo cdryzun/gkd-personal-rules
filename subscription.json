@@ -1,0 +1,736 @@
+{
+  "id": 2026102704,
+  "name": "五应用广告优化",
+  "version": 2,
+  "author": "cdryzun; derived from aoguai subscription v89",
+  "globalGroups": [],
+  "apps": [
+    {
+      "id": "com.jingdong.app.mall",
+      "name": "京东",
+      "groups": [
+        {
+          "key": 20261027,
+          "name": "开屏广告-本地限定",
+          "desc": "仅匹配本应用启动初期可见的跳过控件；不包含支付、登录或权限自动确认。规则需逐应用实测。",
+          "enable": true,
+          "matchTime": 9000,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "order": -10,
+          "fastQuery": true,
+          "rules": [
+            {
+              "key": 0,
+              "action": "clickNode",
+              "excludeMatches": [
+                "[text=\"Submit\" || text=\"书签\" || text=\"NEXT\" || text=\"覆盖\" || text*=\"阅读并同意\" || ((text*=\"搜索\" || text=\"历史记录\" || text$=\"在搜\") && text.length>3 && text.length<7) || ((text$=\"设置\" || text*=\"跳过片\" || (text^=\"选择\" && (text*=\"偏好\" || text*=\"兴趣\" || text*=\"喜好\" || text*=\"行业\"))) && text.length<10)][visibleToUser=true]",
+                "[id~=\"(?is).*search.*\"] < * > [(id~=\"(?is).*clear.*\")||(id~=\"(?is).*close.*\")||(id~=\"(?is).*back.*\")||(text~=\"(?is).*取消.*\")][height>0&&width>0][top>0&&left>0]",
+                "[name!$=\".EditText\"] < * > [(id~=\"(?is).*clear.*\")||(id~=\"(?is).*close.*\")||(id~=\"(?is).*back.*\")||(text~=\"(?is).*取消.*\")][height>0&&width>0][top>0&&left>0]"
+              ],
+              "anyMatches": [
+                "[text^=\"跳\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"跳过\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"跳 过\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"跳過\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"跳 過\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"skip\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"Skip\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"SKIP\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[vid=\"tt_splash_skip_btn\"||vid=\"btn_skip\"||vid=\"skip_btn\"||vid=\"skip_button\"||vid=\"skipButton\"||vid=\"ad_skip\"||vid=\"ad_skip_btn\"||vid=\"splash_skip\"||vid=\"splash_skip_btn\"||vid=\"tme_ad_skip_button\"||vid=\"skip_ad_button\"||vid=\"ksad_splash_skip_view\"||vid=\"ksad_skip_view\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][vid~=\"(?is).*skip.*\"][vid!~=\"(?is).*video.*\"][vid!~=\"(?is).*head.*\"][vid!~=\"(?is).*tail.*\"][!(text=\"帮助\")][!(text=\"取消\")][!(text*=\"退出\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]"
+              ]
+            }
+          ]
+        },
+        {
+          "key": 2,
+          "name": "局部广告-悬浮广告",
+          "desc": "关闭首页悬浮广告、参与调研提示、红包弹窗和购物车砸金蛋",
+          "activityIds": "com.jingdong.app.mall.MainFrameActivity",
+          "rules": [
+            {
+              "key": 0,
+              "name": "参与调研",
+              "anyMatches": [
+                "FrameLayout + RelativeLayout > RelativeLayout[childCount=2] > ImageView[visibleToUser=true] + ImageView[!(desc=\"返回\")][visibleToUser=true]",
+                "FrameLayout + RelativeLayout > RelativeLayout[childCount=2] > ImageView[visibleToUser=true] + *[childCount=1] > ImageView[!(desc=\"返回\")][visibleToUser=true]"
+              ],
+              "snapshotUrls": [
+                "https://i.gkd.li/import/12642270",
+                "https://i.gkd.li/i/21793011"
+              ],
+              "excludeSnapshotUrls": [
+                "https://i.gkd.li/import/12774910",
+                "https://i.gkd.li/i/15110548"
+              ],
+              "action": "clickNode"
+            },
+            {
+              "key": 1,
+              "name": "邀好友得红包",
+              "matches": "@ImageView[id!=null] + FrameLayout[childCount=3] > ImageView + LinearLayout + TextView",
+              "snapshotUrls": "https://i.gkd.li/import/13242002",
+              "action": "clickNode"
+            },
+            {
+              "key": 2,
+              "name": "首页贴边广告",
+              "matches": "RelativeLayout >n * > [desc^=\"关闭\" && !(id*=\"egg\")][clickable=true][visibleToUser=true]",
+              "snapshotUrls": [
+                "https://i.gkd.li/import/13165659",
+                "https://i.gkd.li/import/12837870",
+                "https://i.gkd.li/import/13072091",
+                "https://i.gkd.li/import/12837870",
+                "https://i.gkd.li/i/17690650"
+              ],
+              "excludeSnapshotUrls": "https://i.gkd.li/i/15077913",
+              "action": "clickNode"
+            },
+            {
+              "key": 3,
+              "name": "购物车页面砸金蛋",
+              "fastQuery": true,
+              "matches": "[id=\"com.jd.lib.cart.feature:id/iv_egg_close\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/import/12642266",
+                "https://i.gkd.li/i/14731003"
+              ],
+              "action": "clickNode"
+            },
+            {
+              "key": 4,
+              "name": "推推红包",
+              "matches": "@ImageView[id^=\"com.jd.lib.personal.feature\"][index=parent.childCount.minus(1)] <<(3,4) RelativeLayout > LinearLayout[id=null][childCount=2] > ImageView[id^=\"com.jd.lib.personal.feature\"][index=0]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/20532279",
+                "https://i.gkd.li/i/20532280",
+                "https://i.gkd.li/i/23693918"
+              ],
+              "excludeSnapshotUrls": [
+                "https://i.gkd.li/i/21343338"
+              ],
+              "action": "clickNode"
+            }
+          ],
+          "enable": true,
+          "matchTime": 30000,
+          "actionMaximum": 3,
+          "resetMatch": "app"
+        },
+        {
+          "key": 5,
+          "name": "全屏广告-广告弹窗",
+          "desc": "关闭各种全屏广告弹窗",
+          "enable": true,
+          "rules": [
+            {
+              "key": 0,
+              "resetMatch": "activity",
+              "matchTime": 10000,
+              "activityIds": [
+                "com.jingdong.app.mall.MainFrameActivity",
+                "com.jd.lib.jshop.jshop.JshopMainShopActivity",
+                "com.jd.lib.cashier.complete.view.CashierCompleteActivity"
+              ],
+              "excludeMatches": [
+                "ImageView[desc=\"关闭页面\"] - [text=\"优惠券\"]",
+                "TextView[text=\"退换/售后\"][id=null]",
+                "[text=\"立即购买\"][visibleToUser=true]"
+              ],
+              "matches": "[name$=\"Layout\"][childCount=2][text=null][desc=null][visibleToUser=true] > @ImageView[desc*=\"关闭\"][visibleToUser=true] - [name$=\"Layout\"||desc=\"弹窗\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/import/13258996",
+                "https://i.gkd.li/import/13218034",
+                "https://i.gkd.li/import/14162769",
+                "https://i.gkd.li/import/13241883",
+                "https://i.gkd.li/import/13259029",
+                "https://i.gkd.li/i/15416926",
+                "https://i.gkd.li/i/15862131",
+                "https://i.gkd.li/i/14927060",
+                "https://i.gkd.li/i/14445257"
+              ],
+              "excludeSnapshotUrls": [
+                "https://i.gkd.li/import/13336847",
+                "https://i.gkd.li/i/18455760",
+                "https://i.gkd.li/i/16818580",
+                "https://i.gkd.li/i/24170046"
+              ],
+              "action": "clickNode"
+            },
+            {
+              "key": 1,
+              "activityIds": "com.jingdong.app.mall.MainFrameActivity",
+              "anyMatches": [
+                "[id=\"android:id/content\"] > RelativeLayout > RelativeLayout > *[childCount=2] > ImageView[index=1][clickable=true][!(desc=\"拍照购\")]",
+                "ViewGroup[childCount>=2] > FrameLayout + FrameLayout > ImageView[desc=\"关闭\"]"
+              ],
+              "snapshotUrls": [
+                "https://i.gkd.li/i/14612925",
+                "https://i.gkd.li/i/17974166",
+                "https://i.gkd.li/i/15364514",
+                "https://i.gkd.li/i/13165721"
+              ],
+              "action": "clickNode"
+            },
+            {
+              "key": 2,
+              "name": "购物车页面支付成功广告弹窗",
+              "activityIds": "com.jd.lib.cart.ShoppingCartNewActivity",
+              "fastQuery": true,
+              "matches": [
+                "@ImageView - ViewGroup >2 TextView[text=\"查看订单\"]"
+              ],
+              "snapshotUrls": "https://i.gkd.li/import/13446362",
+              "action": "clickNode"
+            },
+            {
+              "key": 3,
+              "name": "加入购物车后出现的弹窗",
+              "activityIds": "com.jd.lib.productdetail.ProductDetailActivity",
+              "fastQuery": true,
+              "matches": [
+                "[text=\"继续逛\"][clickable=true]"
+              ],
+              "snapshotUrls": "https://i.gkd.li/i/15047243",
+              "action": "clickNode"
+            }
+          ],
+          "matchTime": 30000,
+          "actionMaximum": 3,
+          "resetMatch": "app"
+        },
+        {
+          "key": 6,
+          "name": "局部广告-横幅广告",
+          "desc": "关闭页面顶部横幅广告和吸顶广告",
+          "activityIds": "com.jingdong.app.mall.MainFrameActivity",
+          "rules": [
+            {
+              "key": 0,
+              "anyMatches": [
+                "ImageView < FrameLayout[index=0] < ViewGroup[childCount>=3] > FrameLayout[index=parent.childCount.minus(1)||index=parent.childCount.minus(2)][childCount=1] > ImageView[desc=\"关闭\"][visibleToUser=true]",
+                "View + FrameLayout[index=1] <2 ViewGroup[childCount>=3] > FrameLayout[index=parent.childCount.minus(1)||index=parent.childCount.minus(2)][childCount=1] > ImageView[desc=\"关闭\"][visibleToUser=true]"
+              ],
+              "snapshotUrls": [
+                "https://i.gkd.li/import/13258973",
+                "https://i.gkd.li/import/13258980",
+                "https://i.gkd.li/import/13258981",
+                "https://i.gkd.li/i/22319329",
+                "https://i.gkd.li/i/26164414"
+              ],
+              "action": "clickNode"
+            },
+            {
+              "key": 1,
+              "matches": "@View[desc.length=null][clickable=true][longClickable=false][visibleToUser=true][id=null][right>parent.right.minus(140)][top<=parent.top.plus(30)] -n ImageView[id=null] <n RelativeLayout[id=null]",
+              "snapshotUrls": "https://i.gkd.li/import/14163014",
+              "action": "clickNode"
+            },
+            {
+              "key": 2,
+              "anyMatches": [
+                "ImageView +n ViewGroup >2 [text.length>0] < ViewGroup + @ViewGroup[clickable=true][visibleToUser=true][right>parent.right.minus(180)] > ImageView <<n RelativeLayout[id^=\"com.jd.lib.personal.feature:id/\"]",
+                "@ViewGroup[index=parent.childCount.minus(1)][clickable=true][visibleToUser=true][right>parent.right.minus(180)] -2 ViewGroup[childCount<=1][index=0] + ViewGroup[childCount=2] >2 [text.length>0&&text.length<=3] <<n RelativeLayout[id^=\"com.jd.lib.personal.feature:id/\"]"
+              ],
+              "snapshotUrls": [
+                "https://i.gkd.li/i/15047238",
+                "https://i.gkd.li/i/17001455",
+                "https://i.gkd.li/i/21344132",
+                "https://i.gkd.li/i/23694139"
+              ],
+              "action": "clickNode"
+            },
+            {
+              "key": 3,
+              "anyMatches": [
+                "[desc=\"吸顶楼层\"] > [desc=\"关闭按钮\"][clickable=true][visibleToUser=true]",
+                "ImageView[clickable=false] < @ViewGroup[clickable=true] <<4 [desc=\"吸顶楼层\"]"
+              ],
+              "snapshotUrls": [
+                "https://i.gkd.li/i/15112953",
+                "https://i.gkd.li/i/26164445"
+              ],
+              "action": "clickNode"
+            },
+            {
+              "key": 4,
+              "fastQuery": true,
+              "matches": "[id=\"com.jd.lib.cart.feature:id/plus_close\"]",
+              "snapshotUrls": "https://i.gkd.li/i/15229577",
+              "action": "clickNode"
+            }
+          ],
+          "enable": true,
+          "matchTime": 30000,
+          "actionMaximum": 3,
+          "resetMatch": "app"
+        }
+      ]
+    },
+    {
+      "id": "com.taobao.taobao",
+      "name": "淘宝",
+      "groups": [
+        {
+          "key": 20261027,
+          "name": "开屏广告-本地限定",
+          "desc": "仅匹配本应用启动初期可见的跳过控件；不包含支付、登录或权限自动确认。规则需逐应用实测。",
+          "enable": true,
+          "matchTime": 9000,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "order": -10,
+          "fastQuery": true,
+          "rules": [
+            {
+              "key": 0,
+              "action": "clickNode",
+              "excludeMatches": [
+                "[text=\"Submit\" || text=\"书签\" || text=\"NEXT\" || text=\"覆盖\" || text*=\"阅读并同意\" || ((text*=\"搜索\" || text=\"历史记录\" || text$=\"在搜\") && text.length>3 && text.length<7) || ((text$=\"设置\" || text*=\"跳过片\" || (text^=\"选择\" && (text*=\"偏好\" || text*=\"兴趣\" || text*=\"喜好\" || text*=\"行业\"))) && text.length<10)][visibleToUser=true]",
+                "[id~=\"(?is).*search.*\"] < * > [(id~=\"(?is).*clear.*\")||(id~=\"(?is).*close.*\")||(id~=\"(?is).*back.*\")||(text~=\"(?is).*取消.*\")][height>0&&width>0][top>0&&left>0]",
+                "[name!$=\".EditText\"] < * > [(id~=\"(?is).*clear.*\")||(id~=\"(?is).*close.*\")||(id~=\"(?is).*back.*\")||(text~=\"(?is).*取消.*\")][height>0&&width>0][top>0&&left>0]"
+              ],
+              "anyMatches": [
+                "[text^=\"跳\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"跳过\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"跳 过\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"跳過\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"跳 過\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"skip\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"Skip\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"SKIP\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[vid=\"tt_splash_skip_btn\"||vid=\"btn_skip\"||vid=\"skip_btn\"||vid=\"skip_button\"||vid=\"skipButton\"||vid=\"ad_skip\"||vid=\"ad_skip_btn\"||vid=\"splash_skip\"||vid=\"splash_skip_btn\"||vid=\"tme_ad_skip_button\"||vid=\"skip_ad_button\"||vid=\"ksad_splash_skip_view\"||vid=\"ksad_skip_view\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][vid~=\"(?is).*skip.*\"][vid!~=\"(?is).*video.*\"][vid!~=\"(?is).*head.*\"][vid!~=\"(?is).*tail.*\"][!(text=\"帮助\")][!(text=\"取消\")][!(text*=\"退出\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]"
+              ]
+            }
+          ]
+        },
+        {
+          "key": 1,
+          "name": "全屏广告-弹窗广告",
+          "desc": "关闭各种全屏弹窗广告，包括会员促销、活动邀请等",
+          "enable": true,
+          "rules": [
+            {
+              "key": 1,
+              "activityIds": [
+                "com.taobao.tao.welcome.Welcome",
+                "com.taobao.tao.TBMainActivity",
+                "com.taobao.android.tbabilitykit.pop.StdPopContainerActivity",
+                "com.taobao.android.detail.wrapper.activity.DetailActivity",
+                "com.alibaba.triver.container.TriverMainActivity",
+                "com.alibaba.android.ultron.vfw.weex2.highPerformance.widget.UltronTradeHybridActivity"
+              ],
+              "fastQuery": true,
+              "matches": "@[desc=\"关闭按钮\"] - [vid=\"poplayer_native_state_id\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/import/13198052",
+                "https://i.gkd.li/import/13249418",
+                "https://i.gkd.li/import/14060521",
+                "https://i.gkd.li/i/12642792",
+                "https://i.gkd.li/i/13180826",
+                "https://i.gkd.li/i/12648734",
+                "https://i.gkd.li/i/12648746",
+                "https://i.gkd.li/i/13198239",
+                "https://i.gkd.li/i/14905372",
+                "https://i.gkd.li/i/22319206",
+                "https://i.gkd.li/i/30856922"
+              ],
+              "action": "clickNode"
+            },
+            {
+              "key": 3,
+              "name": "\"「0元下单」权益\"弹窗",
+              "activityIds": "com.alipay.android.msp.ui.views.MspContainerActivity",
+              "fastQuery": true,
+              "matches": "[text=\"关闭\"] < @FrameLayout[clickable=true] <3 FrameLayout[childCount=3] < * + FrameLayout[childCount=3] [text*=\"0元下单\"]",
+              "snapshotUrls": "https://i.gkd.li/import/14155537",
+              "action": "clickNode"
+            },
+            {
+              "key": 4,
+              "name": "视频页面-弹窗-类型1",
+              "activityIds": [
+                "com.taobao.tao.welcome.Welcome",
+                "com.taobao.tao.TBMainActivity"
+              ],
+              "matches": "View[id=null] > [text=\"立即参加\"] + TextView[id=null][clickable=true]",
+              "snapshotUrls": "https://i.gkd.li/import/12642813",
+              "action": "clickNode"
+            },
+            {
+              "key": 5,
+              "name": "视频页面-签到弹窗",
+              "activityIds": [
+                "com.taobao.tao.welcome.Welcome",
+                "com.taobao.tao.TBMainActivity"
+              ],
+              "matches": "@Image[text.length>40] < View - View >n TextView[text*=\"立即\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/import/12642798",
+                "https://i.gkd.li/import/14163734"
+              ],
+              "action": "clickNode"
+            },
+            {
+              "key": 6,
+              "name": "将小组件添加到手机桌面",
+              "activityIds": "com.alibaba.triver.container.TriverMainActivity",
+              "matches": "View[childCount=2] >3 View[text=\"立即添加\"] + View[text=\"取消\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/import/13598578",
+                "https://i.gkd.li/import/13853510"
+              ],
+              "action": "clickNode"
+            },
+            {
+              "key": 7,
+              "name": "各级页面-添加到首页弹窗",
+              "fastQuery": true,
+              "activityIds": [
+                "com.taobao.themis.container.app.TMSActivity",
+                "com.alibaba.triver.container.TriverMainActivity"
+              ],
+              "matches": "TextView[text=\"去首页\"] + TextView[text=\"退出\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/import/13197553",
+                "https://i.gkd.li/import/13197546"
+              ],
+              "action": "clickNode"
+            },
+            {
+              "key": 8,
+              "matchTime": 10000,
+              "actionMaximum": 1,
+              "resetMatch": "app",
+              "activityIds": "com.taobao.tao.welcome.Welcome",
+              "matches": "@ImageView[desc=\"图片\"][childCount=0][clickable=true][visibleToUser=true][index=parent.childCount.minus(1)][width<200&&height<200]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/18218537",
+                "https://i.gkd.li/i/20277438"
+              ],
+              "action": "clickNode"
+            },
+            {
+              "key": 9,
+              "activityIds": "com.taobao.browser.BrowserActivity",
+              "matches": "WebView[text=\"红包签到\"] > [id=\"ice-container\"] >(3,4) View[childCount=3] > [name$=\"Image\" || name$=\"Button\"][text*=\"jpg\" || text=\"关闭\"][visibleToUser=true]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/18587158",
+                "https://i.gkd.li/i/18587159"
+              ],
+              "action": "clickNode"
+            },
+            {
+              "key": 10,
+              "activityIds": "com.taobao.tao.welcome.Welcome",
+              "matches": "[text*=\"淘宝闪购\"] <n View + View[childCount=1] > Image[text.length>20]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/22319191"
+              ],
+              "action": "clickNode"
+            },
+            {
+              "key": 11,
+              "fastQuery": true,
+              "activityIds": "com.taobao.themis.container.app.TMSActivity",
+              "matches": "[text=\"规则\"] +2 @View[childCount=1][clickable=true] > Image[childCount=0][text!=null] <<n [vid=\"tms_tab_content_view\"]",
+              "snapshotUrls": "https://i.gkd.li/i/22308745",
+              "action": "clickNode"
+            },
+            {
+              "key": 12,
+              "activityIds": [
+                "com.taobao.search.uniform.SearchActivity",
+                "com.taobao.android.detail.alittdetail.TTDetailActivity",
+                "com.taobao.tao.TBMainActivity"
+              ],
+              "matches": "@[name$=\".TextView\" || name$=\".Image\"][clickable=true][childCount=0][width<150 && height<150][index=parent.childCount.minus(1)] <n View >(1,2,3) [id=null][text$=\"用\" || text$=\"收下\" || text*=\"立减\"] <<n WebView[vid=\"poplayer_inner_view\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/22949963",
+                "https://i.gkd.li/i/23289412",
+                "https://i.gkd.li/i/23567053",
+                "https://i.gkd.li/i/24982514",
+                "https://i.gkd.li/i/26044614",
+                "https://i.gkd.li/i/28312957"
+              ],
+              "action": "clickNode"
+            },
+            {
+              "key": 13,
+              "name": "充值类商品界面广告",
+              "fastQuery": true,
+              "activityIds": "com.taobao.weex.WXActivity",
+              "matches": "@ImageView[clickable=true][width<150 && height<155] < FrameLayout <2 FrameLayout < FrameLayout < FrameLayout < FrameLayout <2 [vid=\"weex_render_view\"]",
+              "snapshotUrls": "https://i.gkd.li/i/23923991",
+              "action": "clickNode"
+            },
+            {
+              "key": 14,
+              "activityIds": "com.taobao.weex.WXActivity",
+              "matches": "Dialog > Image[text.length>40] + Button[text=\"关闭\"]",
+              "snapshotUrls": "https://i.gkd.li/i/26164501",
+              "action": "clickNode"
+            },
+            {
+              "key": 15,
+              "fastQuery": true,
+              "activityIds": "com.taobao.android.tbabilitykit.pop.StdPopContainerActivity",
+              "matches": "Image[text*=\".jpg\"][width<150 && height<150] < [visibleToUser=true] < @View[clickable=true][childCount=1] <<n FrameLayout[id=null] - [vid=\"layermanager_penetrate_webview_container_id\"]",
+              "snapshotUrls": "https://i.gkd.li/i/30710740",
+              "action": "clickNode"
+            }
+          ],
+          "matchTime": 30000,
+          "actionMaximum": 3,
+          "resetMatch": "app"
+        },
+        {
+          "key": 3,
+          "name": "局部广告-悬浮/卡片/横幅广告",
+          "desc": "关闭各种悬浮/卡片/横幅广告",
+          "rules": [
+            {
+              "key": 0,
+              "name": "商品详情右侧悬浮广告",
+              "fastQuery": true,
+              "activityIds": "com.taobao.browser.BrowserActivity",
+              "matches": "@Image[childCount=0][clickable=true][text!=null] < View <2 View < WebView < o0 <2 WebView < [id=\"android:id/content\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/import/13521702"
+              ],
+              "excludeSnapshotUrls": "https://i.gkd.li/import/14236602",
+              "action": "clickNode"
+            },
+            {
+              "key": 1,
+              "name": "首页底部浮条广告",
+              "fastQuery": true,
+              "activityIds": "com.taobao.tao.welcome.Welcome",
+              "matches": "@[desc=\"关闭浮条\"] <<n [vid=\"poplayer_native_state_id\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/19121544",
+                "https://i.gkd.li/i/19399328"
+              ],
+              "action": "clickNode"
+            },
+            {
+              "key": 2,
+              "name": "消息页面热门活动卡片",
+              "fastQuery": true,
+              "activityIds": [
+                "com.taobao.tao.welcome.Welcome",
+                "com.taobao.tao.TBMainActivity"
+              ],
+              "matches": "[desc.length>0 || text.length>0] + @LinearLayout[clickable=true] + FrameLayout > TextView[text=\"퀺\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/import/13197877",
+                "https://i.gkd.li/i/23140899"
+              ],
+              "action": "clickNode"
+            },
+            {
+              "key": 3,
+              "fastQuery": true,
+              "activityIds": "com.taobao.themis.container.app.TMSActivity",
+              "matches": "@Image[childCount=0][clickable=true][text!=null] <2 View < View < View <9 View < WebView < m0 <2 WebView < RelativeLayout < [vid=\"tms_tab_content_view\"]",
+              "snapshotUrls": "https://i.gkd.li/i/22291107",
+              "action": "clickNode"
+            },
+            {
+              "key": 4,
+              "fastQuery": true,
+              "activityIds": "com.taobao.android.detail.alittdetail.TTDetailActivity",
+              "matches": "@FrameLayout[desc=\"关闭\"][clickable=true] <<n [vid=\"ll_dinamicx_container\"]",
+              "snapshotUrls": "https://i.gkd.li/i/23289445",
+              "action": "clickNode"
+            },
+            {
+              "key": 5,
+              "name": "商品详情页面横条广告",
+              "fastQuery": true,
+              "activityIds": "com.taobao.android.detail.alittdetail.TTDetailActivity",
+              "matches": "@FrameLayout[desc=\"关闭\"][clickable=true][visibleToUser=true] -3 ImageView <<n [vid=\"bottom_float_dx\"]",
+              "snapshotUrls": "https://i.gkd.li/i/25639274",
+              "action": "clickNode"
+            },
+            {
+              "key": 6,
+              "name": "订单页横条广告",
+              "fastQuery": true,
+              "activityIds": "com.taobao.android.order.bundle.TBOrderListActivity",
+              "matches": "@TextView[clickable=true][visibleToUser=true][text.length=1] -4 ImageView < LinearLayout[childCount=5] <<n [vid=\"recycler_view\"]",
+              "snapshotUrls": "https://i.gkd.li/i/25639650",
+              "action": "clickNode"
+            },
+            {
+              "key": 7,
+              "name": "首页横条广告",
+              "matchRoot": true,
+              "activityIds": "com.taobao.tao.welcome.Welcome",
+              "matches": "[desc.length=4] < * + @[clickable=true] > [text=\"뉜\"]",
+              "snapshotUrls": "https://i.gkd.li/i/25658605",
+              "action": "clickNode"
+            }
+          ],
+          "enable": true,
+          "matchTime": 30000,
+          "actionMaximum": 3,
+          "resetMatch": "app"
+        }
+      ]
+    },
+    {
+      "id": "com.alibaba.android.rimet",
+      "name": "钉钉",
+      "groups": [
+        {
+          "key": 20261027,
+          "name": "开屏广告-本地限定",
+          "desc": "仅匹配本应用启动初期可见的跳过控件；不包含支付、登录或权限自动确认。规则需逐应用实测。",
+          "enable": true,
+          "matchTime": 9000,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "order": -10,
+          "fastQuery": true,
+          "rules": [
+            {
+              "key": 0,
+              "action": "clickNode",
+              "excludeMatches": [
+                "[text=\"Submit\" || text=\"书签\" || text=\"NEXT\" || text=\"覆盖\" || text*=\"阅读并同意\" || ((text*=\"搜索\" || text=\"历史记录\" || text$=\"在搜\") && text.length>3 && text.length<7) || ((text$=\"设置\" || text*=\"跳过片\" || (text^=\"选择\" && (text*=\"偏好\" || text*=\"兴趣\" || text*=\"喜好\" || text*=\"行业\"))) && text.length<10)][visibleToUser=true]",
+                "[id~=\"(?is).*search.*\"] < * > [(id~=\"(?is).*clear.*\")||(id~=\"(?is).*close.*\")||(id~=\"(?is).*back.*\")||(text~=\"(?is).*取消.*\")][height>0&&width>0][top>0&&left>0]",
+                "[name!$=\".EditText\"] < * > [(id~=\"(?is).*clear.*\")||(id~=\"(?is).*close.*\")||(id~=\"(?is).*back.*\")||(text~=\"(?is).*取消.*\")][height>0&&width>0][top>0&&left>0]"
+              ],
+              "anyMatches": [
+                "[text^=\"跳\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"跳过\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"跳 过\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"跳過\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"跳 過\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"skip\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"Skip\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"SKIP\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[vid=\"tt_splash_skip_btn\"||vid=\"btn_skip\"||vid=\"skip_btn\"||vid=\"skip_button\"||vid=\"skipButton\"||vid=\"ad_skip\"||vid=\"ad_skip_btn\"||vid=\"splash_skip\"||vid=\"splash_skip_btn\"||vid=\"tme_ad_skip_button\"||vid=\"skip_ad_button\"||vid=\"ksad_splash_skip_view\"||vid=\"ksad_skip_view\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][vid~=\"(?is).*skip.*\"][vid!~=\"(?is).*video.*\"][vid!~=\"(?is).*head.*\"][vid!~=\"(?is).*tail.*\"][!(text=\"帮助\")][!(text=\"取消\")][!(text*=\"退出\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]"
+              ]
+            }
+          ]
+        },
+        {
+          "key": 1,
+          "name": "局部广告-消息列表上方广告",
+          "fastQuery": true,
+          "matchTime": 10000,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "rules": [
+            {
+              "key": 0,
+              "matches": "@FrameLayout > [id=\"com.alibaba.android.rimet:id/icft_close\"]",
+              "snapshotUrls": "https://i.gkd.li/i/13325125",
+              "action": "clickNode"
+            }
+          ],
+          "enable": true
+        }
+      ]
+    },
+    {
+      "id": "com.netease.cloudmusic",
+      "name": "网易云音乐",
+      "groups": [
+        {
+          "key": 20261027,
+          "name": "开屏广告-本地限定",
+          "desc": "仅匹配本应用启动初期可见的跳过控件；不包含支付、登录或权限自动确认。规则需逐应用实测。",
+          "enable": true,
+          "matchTime": 9000,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "order": -10,
+          "fastQuery": true,
+          "rules": [
+            {
+              "key": 0,
+              "action": "clickNode",
+              "excludeMatches": [
+                "[text=\"Submit\" || text=\"书签\" || text=\"NEXT\" || text=\"覆盖\" || text*=\"阅读并同意\" || ((text*=\"搜索\" || text=\"历史记录\" || text$=\"在搜\") && text.length>3 && text.length<7) || ((text$=\"设置\" || text*=\"跳过片\" || (text^=\"选择\" && (text*=\"偏好\" || text*=\"兴趣\" || text*=\"喜好\" || text*=\"行业\"))) && text.length<10)][visibleToUser=true]",
+                "[id~=\"(?is).*search.*\"] < * > [(id~=\"(?is).*clear.*\")||(id~=\"(?is).*close.*\")||(id~=\"(?is).*back.*\")||(text~=\"(?is).*取消.*\")][height>0&&width>0][top>0&&left>0]",
+                "[name!$=\".EditText\"] < * > [(id~=\"(?is).*clear.*\")||(id~=\"(?is).*close.*\")||(id~=\"(?is).*back.*\")||(text~=\"(?is).*取消.*\")][height>0&&width>0][top>0&&left>0]"
+              ],
+              "anyMatches": [
+                "[text^=\"跳\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"跳过\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"跳 过\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"跳過\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"跳 過\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"skip\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"Skip\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[text*=\"SKIP\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text.length<10][((text*=\"跳过\"||text*=\"跳 过\"||text*=\"跳過\"||text*=\"跳 過\"||text~=\"(?is).*skip.*\")&&text!*=\"视频\"&&text!*=\"片头\"&&text!*=\"片尾\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]",
+                "[vid=\"tt_splash_skip_btn\"||vid=\"btn_skip\"||vid=\"skip_btn\"||vid=\"skip_button\"||vid=\"skipButton\"||vid=\"ad_skip\"||vid=\"ad_skip_btn\"||vid=\"splash_skip\"||vid=\"splash_skip_btn\"||vid=\"tme_ad_skip_button\"||vid=\"skip_ad_button\"||vid=\"ksad_splash_skip_view\"||vid=\"ksad_skip_view\"][name!$=\".CheckBox\"][name!$=\".EditText\"][name!$=\".ProgressBar\"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][vid~=\"(?is).*skip.*\"][vid!~=\"(?is).*video.*\"][vid!~=\"(?is).*head.*\"][vid!~=\"(?is).*tail.*\"][!(text=\"帮助\")][!(text=\"取消\")][!(text*=\"退出\")][!(text~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")][!(desc~=\"([01]?[0-9]|2[0-3])[:：][0-5][0-9]\")]"
+              ]
+            }
+          ]
+        },
+        {
+          "key": 2,
+          "name": "局部广告-卡片广告",
+          "desc": "点击关闭",
+          "fastQuery": true,
+          "rules": [
+            {
+              "key": 0,
+              "activityIds": ".activity.PlayerActivity",
+              "matches": "[vid=\"iv_ad_close\"]",
+              "snapshotUrls": "https://i.gkd.li/i/15282417",
+              "action": "clickNode"
+            },
+            {
+              "key": 1,
+              "activityIds": ".music.biz.search.activity.SearchActivity",
+              "matches": "[vid=\"adCloseIV\"][visibleToUser=true]",
+              "snapshotUrls": "https://i.gkd.li/i/16385547",
+              "action": "clickNode"
+            }
+          ],
+          "enable": true,
+          "matchTime": 30000,
+          "actionMaximum": 3,
+          "resetMatch": "app"
+        }
+      ]
+    },
+    {
+      "id": "com.google.android.youtube",
+      "name": "YouTube",
+      "groups": [
+        {
+          "key": 0,
+          "name": "全屏广告-视频播放-跳过广告",
+          "desc": "点击跳过广告按钮",
+          "enable": true,
+          "rules": [
+            {
+              "fastQuery": true,
+              "key": 0,
+              "activityIds": [
+                "com.google.android.apps.youtube.app.watchwhile.WatchWhileActivity",
+                "com.google.android.apps.youtube.app.watchwhile.MainActivity"
+              ],
+              "matches": "[vid=\"skip_ad_button\" || vid=\"modern_skip_ad_text\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/13797491",
+                "https://i.gkd.li/i/12565261",
+                "https://i.gkd.li/i/13705106"
+              ],
+              "action": "clickNode"
+            }
+          ],
+          "actionCd": 10000
+        }
+      ]
+    }
+  ],
+  "updateUrl": "https://raw.githubusercontent.com/cdryzun/gkd-personal-rules/main/subscription.json",
+  "checkUpdateUrl": "https://raw.githubusercontent.com/cdryzun/gkd-personal-rules/main/subscription.version.json"
+}
